@@ -1,4 +1,4 @@
-# Docker & Docker Compose Installation on Ubuntu
+### Docker & Docker Compose Installation on Ubuntu
 
 #!/bin/bash
 sudo apt update
@@ -11,4 +11,4 @@ sudo apt install docker-compose -y
 sudo groupadd docker
 sudo usermod -aG docker $USER && newgrp docker
 
-# Last step - Reboot the system
+### Last step - Reboot the system
