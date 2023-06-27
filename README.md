@@ -1,14 +1,11 @@
 ### Docker & Docker Compose Installation on Ubuntu
 
-## OS update
-sudo apt update
-
 ## Install requirements
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
-## OS update
+## Update Ubuntu
 sudo apt update
 
 ## Docker Community Edition and Docker Compose installation
@@ -22,3 +19,4 @@ sudo groupadd docker
 sudo usermod -aG docker $USER && newgrp docker
 
 ## Reboot the system
+sudo reboot
