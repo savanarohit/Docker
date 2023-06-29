@@ -99,34 +99,7 @@ At the root (where docker-compose.yml is located): docker-compose up
 Docker-compose up --build
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Use docker-compose to pull multiple of Docker app at once
+# Pulling multiple of Docker images at once
 
 1. Create a docker-compose.yml as below
 
