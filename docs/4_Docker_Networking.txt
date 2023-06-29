@@ -1,5 +1,7 @@
 ## Docker Networking
 
+# Key features and concepts of Docker Networking:
+
 1. Docker Networking refers to the functionality provided by Docker to facilitate communication between containers, container-to-host, and container-to-external network resources. Docker provides various networking options that allow containers to connect and communicate with each other and with the external world
 
 2. Docker Networks: Docker provides a networking abstraction called "Docker Networks." A Docker network is a virtual network that allows containers to communicate with each other using IP addresses. Docker networks provide isolation and segmentation, enabling containers to have their own network stack and IP address.

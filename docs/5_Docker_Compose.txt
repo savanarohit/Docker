@@ -1,0 +1,55 @@
+## Docker Compose
+
+Docker Compose is a tool provided by Docker that allows you to define and manage multi-container Docker applications. It provides a simple and declarative way to define the services, networks, and volumes required for your application and launch them as a single cohesive unit.
+
+With Docker Compose, you define your application's configuration in a YAML file called a "docker-compose.yml" file. This file specifies the services (containers), their dependencies, environment variables, network settings, and other configurations. Docker Compose uses this file to create and manage the containers and their associated resources.
+
+# Key features and concepts of Docker Compose:
+
+1. Multi-Container Applications: Docker Compose is primarily designed for managing multi-container applications. You can define multiple services, each running in its own container, and specify their interdependencies and configurations.
+
+2. Orchestration: Docker Compose orchestrates the creation, starting, and stopping of containers defined in the Compose file. It ensures that the containers are launched in the right order, with the correct dependencies and configurations.
+
+3. Declarative Syntax: Docker Compose uses a declarative YAML syntax to define the desired state of your application. You specify the services, networks, and volumes you need, along with their configurations, in the Compose file. Docker Compose handles the implementation details and ensures that the desired state is achieved.
+
+4. Service Scaling: Docker Compose allows you to scale services horizontally by specifying the desired number of replicas for a particular service. This enables you to easily scale your application based on demand.
+
+5. Environment Variables and Volume Mapping: Docker Compose allows you to set environment variables for containers and map host machine directories to container volumes. This provides flexibility in configuring your containers and sharing data between the host and containers.
+
+6. Networking: Docker Compose automatically creates a default network for your application, allowing containers to communicate with each other using their service names. You can also define custom networks to isolate and control the communication between services.
+
+7. Integration with Docker Swarm: Docker Compose integrates seamlessly with Docker Swarm, which is Docker's native clustering and orchestration solution. You can use Docker Compose files to deploy and manage multi-container applications across a Swarm cluster.
+
+
+# Start a compose application
+
+At the root (where docker-compose.yml is located): docker-compose up
+
+# Start a compose application and rebuild images:
+
+Docker-compose up --build
+
+docker-compose.yml
+
+# Version
+
+Current version is 3. So at the top of the file, specify: version: ‘3’
+
+# Services with builds
+
+Have a services key in the file. List out services one indent at a time.
+
+# Dependencies
+Use the depends on key and specify dependencies with a list. Each container dependency is marked by a dash, such as: -backend
+
+# Volumes
+Have a volume key per service.
+
+Connect a Docker host directory to a container directory, by joining them with a colon.
+Example: ./dockerhostdir:/containerdir
+
+# Networks
+
+Declare networks at the bottom of the file.
+Specify each service’s network(s) with the networks option for each service.
+

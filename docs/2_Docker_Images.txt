@@ -4,7 +4,7 @@ In Docker, an image is a lightweight, standalone, and executable software packag
 
 An image is created from a set of instructions called a Dockerfile. A Dockerfile defines the steps needed to build the image, such as installing dependencies, configuring the environment, and copying the application code. These instructions are executed in order to create a reproducible and consistent image
 
-# Docker images have the following key characteristics:
+# Key characteristics of Docker images:
 
 1. Portability: Docker images are portable and can be run on any system that has Docker installed. This portability allows for consistent deployment across different environments, from development to production.
 

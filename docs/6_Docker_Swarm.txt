@@ -1,0 +1,56 @@
+## Docker Swarm
+
+Docker Swarm is a native clustering and orchestration solution provided by Docker. It enables you to create and manage a swarm of Docker nodes, turning them into a single, unified Docker infrastructure. Docker Swarm allows you to deploy and scale containerized applications across multiple hosts, providing high availability and fault tolerance.
+
+Docker Swarm simplifies the management and orchestration of containerized applications across a cluster of Docker hosts. It allows you to deploy and scale applications with ease, ensuring high availability and fault tolerance. Docker Swarm provides a native and straightforward solution for building and managing resilient and distributed systems using Docker.
+
+# Key concepts and features of Docker Swarm:
+
+1. Swarm Mode: Docker Swarm leverages the built-in "Swarm Mode" functionality available in Docker. Swarm Mode allows you to turn a group of Docker hosts into a swarm, forming a distributed system where Docker containers can be scheduled and orchestrated.
+
+2. Swarm Manager: In a Swarm cluster, one or more hosts act as swarm managers. The swarm managers are responsible for coordinating and managing the cluster, handling task scheduling, service deployment, and scaling. Swarm managers maintain the cluster state and ensure the desired state is achieved.
+
+3. Swarm Nodes: Swarm nodes are Docker hosts that participate in the swarm. Nodes can be either swarm managers or worker nodes. Swarm managers handle the orchestration and management of containers, while worker nodes execute the containers and distribute the workload.
+
+4. Services: In Docker Swarm, services represent the desired state of a containerized application. A service defines the container image, the number of replicas, and other configurations. Swarm managers schedule the tasks (containers) associated with a service on available worker nodes.
+
+5. Task Scheduling: Swarm managers use built-in scheduling algorithms to determine where to deploy tasks (containers) in the cluster. They distribute the workload across available worker nodes based on factors such as resource availability, constraints, and placement preferences.
+
+6. Scaling and Rolling Updates: Docker Swarm allows you to scale services up or down by adjusting the number of replicas. You can also perform rolling updates by changing the service configuration, allowing for seamless application upgrades without downtime.
+
+7. Load Balancing: Docker Swarm automatically distributes incoming requests to services across multiple containers. It provides built-in load balancing to ensure that requests are evenly distributed, improving the scalability and performance of containerized applications.
+
+8. Overlay Networking: Swarm provides overlay networks, which enable containers running on different nodes to communicate with each other using their service names. Overlay networks facilitate seamless communication between services regardless of the underlying network infrastructure.
+
+
+# Initialize a swarm in a node
+
+Usage: docker swarm init --advertise-addr=<node ip>
+Example: docker swarm init --advertise-addr=172.31.17.31
+
+# After initializing the swarm, you will find a join command for worker/other manager nodes
+
+Example: docker swarm join --token SWMTKN-1-592fo0c3af1guwi9cw58jpaw89fafzyw5fzbk9dwiw8bm4xxpad-94vn587o9o3r73h3e5esujxm9 172.31.17.31:2377
+
+# List docker nodes from a manger:
+
+docker node ls
+
+# Create a service for the swarm:
+
+Usage: docker service create --name=<service name> --publish=<host port:service port> <service image>
+Example: docker service create --name=site --publish=80:80 nginx
+
+# List services:
+
+docker service ls
+
+# List the running tasks for a service:
+
+Usage: docker service ps <service name>
+Example: docker service ps site
+
+# Update a service
+
+Usage: docker service update [options] <service name>
+Example: docker service update --replicas=6 site
