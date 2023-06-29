@@ -21,7 +21,76 @@ With Docker Compose, you define your application's configuration in a YAML file 
 7. Integration with Docker Swarm: Docker Compose integrates seamlessly with Docker Swarm, which is Docker's native clustering and orchestration solution. You can use Docker Compose files to deploy and manage multi-container applications across a Swarm cluster.
 
 
-# Start a compose application
+# To use this Docker Compose file, create the frontend and backend directories as before and adjust the Dockerfiles accordingly.
+# Create a docker-compose.yml file with below details for a 3-Tier WebApp
+
+version: '3'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+    networks:
+      - webapp_net
+
+  backend:
+    build: ./backend
+    ports:
+      - 5000:5000
+    depends_on:
+      - database
+    networks:
+      - webapp_net
+    volumes:
+      - backend_data:/app/data
+
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: webapp_db
+      MYSQL_USER: webapp_user
+      MYSQL_PASSWORD: webapp_password
+    networks:
+      - webapp_net
+    volumes:
+      - db_data:/var/lib/mysql
+
+networks:
+  webapp_net:
+
+volumes:
+  backend_data:
+  db_data:
+
+
+# docker-compose.yml file explanation
+
+1. Version - Current version is 3. So at the top of the file, specify: version: ‘3’
+
+2. Services - frontend , backend , database etc with builds. Have a services key in the file. List out services one indent at a time.
+
+# The frontend service remains the same, exposing port 80 and depending on the backend service.
+
+# The backend service now has a volume named backend_data defined. This volume will be used to persist the backend application's data. The volume is mounted to the /app/data directory inside the container.
+
+# The database service also has a volume named db_data defined. This volume will be used to persist the MySQL database's data. The volume is mounted to the /var/lib/mysql directory inside the container.
+
+3. Dependencies - Use the depends on key and specify dependencies with a list. Each container dependency is marked by a dash, such as: -backend
+
+4. Networks - Declare networks at the bottom of the file. Specify each service’s network(s) with the networks option for each service. The services frontend, backend, and database are connected to a common network named webapp_net.
+
+Connect a Docker host directory to a container directory, by joining them with a colon. This allows the containers to communicate with each other using their service names as hostnames.
+
+Example: ./dockerhostdir:/containerdir  
+
+5. Volumes - volumes section defines the backend_data and db_data volumes. Have a volume key per service.
+
+
+# To start the application, navigate to the directory where the docker-compose.yml file is located and run:
 
 At the root (where docker-compose.yml is located): docker-compose up
 
@@ -29,27 +98,83 @@ At the root (where docker-compose.yml is located): docker-compose up
 
 Docker-compose up --build
 
-docker-compose.yml
 
-# Version
 
-Current version is 3. So at the top of the file, specify: version: ‘3’
 
-# Services with builds
 
-Have a services key in the file. List out services one indent at a time.
 
-# Dependencies
-Use the depends on key and specify dependencies with a list. Each container dependency is marked by a dash, such as: -backend
 
-# Volumes
-Have a volume key per service.
 
-Connect a Docker host directory to a container directory, by joining them with a colon.
-Example: ./dockerhostdir:/containerdir
 
-# Networks
 
-Declare networks at the bottom of the file.
-Specify each service’s network(s) with the networks option for each service.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Use docker-compose to pull multiple of Docker app at once
+
+1. Create a docker-compose.yml as below
+
+version: '3.1'
+services:
+  centos:
+    image: centos
+  ubuntu:
+    image: ubuntu
+  php:
+    image: php
+  node:
+    image: node
+  tomcat:
+    image: tomcat
+  python:
+    image: python
+  apache:
+    image: httpd
+  nginx:
+    image: nginx
+  redis:
+    image: redis
+  mysql:
+    image: mysql
+  golang:
+    image: golang
+  mongo:
+    image: mongo
+  consul:
+    image: consul
+  elasticsearch:
+    image: elasticsearch:8.1.2
+  mongo-express:
+    image: mongo-express
+  jenkins:
+    image: jenkins/jenkins:lts-jdk11
+  kibana:
+    image: kibana:8.1.2
+  drupal:
+    image: drupal
+  rocker.chat:
+    image: rocket.chat
+  backdrop:
+    image: backdrop
+  postfixadmin:
+    image: postfixadmin
+
+2. Run Docker-compose to pull all the images in parallel
+
+sudo docker-compose pull --parallel

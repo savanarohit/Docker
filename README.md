@@ -26,67 +26,15 @@ sudo reboot
 
 # Docker Commands Documentation 
 
-1. [Docker Containers]()
-2. [Docker Images]()
-3. [Docker Volume]()
-4. []()
+1. [Docker Containers](https://github.com/savanarohit/Docker/blob/main/docs/1_Docker_Containers.txt)
+2. [Docker Images](https://github.com/savanarohit/Docker/blob/main/docs/2_Docker_Images.txt)
+3. [Docker Volume](https://github.com/savanarohit/Docker/blob/main/docs/3_Docker_Volume.txt)
+4. [Docker Networking](https://github.com/savanarohit/Docker/blob/main/docs/4_Docker_Networking.txt)
+5. [Docker Compose](https://github.com/savanarohit/Docker/blob/main/docs/5_Docker_Compose.txt)
+6. [Docker Swarm](https://github.com/savanarohit/Docker/blob/main/docs/6_Docker_Swarm.txt)
+7. [Docker Hub](https://github.com/savanarohit/Docker/blob/main/docs/7_Docker_Hub.txt)
 
 
 
 
-
-
-
-## Use docker-compose to pull multiple of Docker app at once
-
-# Create a docker-compose.yml as below
-
-version: '3.1'
-services:
-  centos:
-    image: centos
-  ubuntu:
-    image: ubuntu
-  php:
-    image: php
-  node:
-    image: node
-  tomcat:
-    image: tomcat
-  python:
-    image: python
-  apache:
-    image: httpd
-  nginx:
-    image: nginx
-  redis:
-    image: redis
-  mysql:
-    image: mysql
-  golang:
-    image: golang
-  mongo:
-    image: mongo
-  consul:
-    image: consul
-  elasticsearch:
-    image: elasticsearch:8.1.2
-  mongo-express:
-    image: mongo-express
-  jenkins:
-    image: jenkins/jenkins:lts-jdk11
-  kibana:
-    image: kibana:8.1.2
-  drupal:
-    image: drupal
-  rocker.chat:
-    image: rocket.chat
-  backdrop:
-    image: backdrop
-  postfixadmin:
-    image: postfixadmin
-
-# Then run Docker-compose to pull all the images in parallel
-
-sudo docker-compose pull --parallel
 
