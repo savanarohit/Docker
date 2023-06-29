@@ -1,0 +1,5 @@
+FROM php
+WORKDIR /usr/app
+COPY index.php .
+CMD [ "php", "-S" , "0.0.0.0:80"]
+EXPOSE 80
