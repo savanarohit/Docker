@@ -94,10 +94,13 @@ Example: ./dockerhostdir:/containerdir
 
 At the root (where docker-compose.yml is located): docker-compose up
 
+This command will build the necessary images (if they don't exist already), create the required volumes, create the network, and start the services defined in the Compose file.
+
+Now, the backend data will be persisted in the backend_data volume, and the database data will be persisted in the db_data volume. The containers will communicate with each other over the webapp_net network.
+
 # Start a compose application and rebuild images:
 
 Docker-compose up --build
-
 
 # Pulling multiple of Docker images at once
 
