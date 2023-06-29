@@ -6,9 +6,9 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
-## Update Ubuntu OS
+## Update Ubuntu OS and Install Docker dependencies
 
-sudo apt update
+sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 
 ## Install Docker Community Edition and Docker Compose
 
