@@ -1,14 +1,12 @@
 # Docker & Docker Compose installation on Ubuntu OS
 
-## Install Docker requirements
+## Update Ubuntu OS
 
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt update
 
-## Update Ubuntu OS and Install Docker dependencies
+## Install Docker dependencies
 
-sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && sudo apt update
 
 ## Install Docker Community Edition and Docker Compose
 
@@ -39,7 +37,7 @@ sudo reboot
 
 
 
-## Pull multiple Docker Images at once
+## Use docker-compose to pull multiple of Docker app at once
 
 # Create a docker-compose.yml as below
 
