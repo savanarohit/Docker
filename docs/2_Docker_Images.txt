@@ -1,6 +1,18 @@
-## Docker Images
+## Docker Image
 
+In Docker, an image is a lightweight, standalone, and executable software package that contains everything needed to run a piece of software, including the code, runtime environment, libraries, and system tools. Docker images serve as the building blocks for containers.
 
+An image is created from a set of instructions called a Dockerfile. A Dockerfile defines the steps needed to build the image, such as installing dependencies, configuring the environment, and copying the application code. These instructions are executed in order to create a reproducible and consistent image
+
+# Docker images have the following key characteristics:
+
+1. Portability: Docker images are portable and can be run on any system that has Docker installed. This portability allows for consistent deployment across different environments, from development to production.
+
+2. Isolation: Each Docker image runs in an isolated environment known as a container. Containers ensure that the software inside the image runs consistently regardless of the host system, making it easier to package and distribute applications.
+
+3. Layered Architecture: Docker images are composed of multiple layers. Each layer represents an instruction in the Dockerfile. Layers are cached, and if an image is built again with only minor changes, Docker can reuse the cached layers, resulting in faster build times.
+
+4. Versioning: Docker images can be versioned and tagged, allowing for precise control and management of different versions of an application or its dependencies. This makes it easy to roll back to a previous version or deploy multiple versions simultaneously.
 
 
 # List docker images:
@@ -67,6 +79,7 @@ Example: docker create -it --name=NodeWebApp Node/WebApp:1.0.0
 # List all running containers:
 
 Example: docker container ls
+Example: docker ps 
 
 
 

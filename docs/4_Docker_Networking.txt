@@ -1,0 +1,37 @@
+## Docker Networking
+
+1. Docker Networking refers to the functionality provided by Docker to facilitate communication between containers, container-to-host, and container-to-external network resources. Docker provides various networking options that allow containers to connect and communicate with each other and with the external world
+
+2. Docker Networks: Docker provides a networking abstraction called "Docker Networks." A Docker network is a virtual network that allows containers to communicate with each other using IP addresses. Docker networks provide isolation and segmentation, enabling containers to have their own network stack and IP address.
+
+3. Default Bridge Network: When Docker is installed, a default bridge network called "bridge" is created automatically. Containers attached to the default bridge network can communicate with each other using container names as hostnames. However, they are isolated from the host machine and other networks.
+
+4. User-Defined Networks: Docker allows the creation of user-defined networks. These networks can be customized to meet specific requirements. User-defined networks provide isolation, DNS resolution, and container name-based communication. Containers within the same user-defined network can communicate with each other using their container names as hostnames.
+
+5. Network Drivers: Docker supports different network drivers, which determine how containers are connected to a network. Some commonly used network drivers include bridge, overlay, host, and macvlan. Each driver has its own characteristics and is suitable for different use cases.
+
+6. Container Networking Interfaces (CNIs): Docker can integrate with third-party Container Networking Interfaces (CNIs). CNIs provide additional networking capabilities and plugins, allowing for more advanced networking configurations and integrations with external networking infrastructure.
+
+7. Container Port Mapping: Docker allows containers to expose specific ports to the host machine or to the external network. Port mapping enables external access to containerized services running inside containers.
+
+8. External Connectivity: Docker containers can connect to external networks and resources. This can be achieved through network address translation (NAT), routing, or by attaching containers to multiple networks.
+
+
+# List docker networks
+
+docker network ls
+
+# Inspect a docker network
+
+Usage: docker network inspect <network name>
+Example: docker network inspect bridge
+
+# Create a docker network
+
+Usage: docker network create <network name>
+Example: docker network create privatenw
+
+# Run a container with a custom docker network:
+
+Usage: --network=<network name>
+Example: docker run --network=privatenw -it --name=goo busybox
