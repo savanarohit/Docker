@@ -1,8 +1,4 @@
-## Docker and Docker Compose Installation Script for Ubuntu OS
-
-# This script will install all the dependices , Docker and Docker Compose
-# At last it will reboot the sysytem
-
+# This script will install all the dependices , Docker and Docker Compose. At the end it will also reboot the sysytem
 #!/bin/bash
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
