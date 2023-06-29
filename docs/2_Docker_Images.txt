@@ -1,0 +1,72 @@
+## Docker Images
+
+
+
+
+# List docker images:
+
+docker image ls
+
+## To build a Docker image first we need to create a Dockerfile with below details
+
+# Sample Nodejs WebApp 
+FROM node:latest
+WORKDIR /usr/src/app
+RUN npm install -g serve
+COPY ./display ./display
+EXPOSE 80
+CMD serve ./display
+CMD [“node”, “server.js”]
+
+## Dockerfile Explained
+
+# Specify a base image:
+
+Usage: FROM <base image>
+Example: FROM node:latest
+
+# Set a working directory for the container:
+
+Usage: WORKDIR <dir>
+Example: WORKDIR /usr/src/app
+
+# Run a command for the container image:
+
+Usage: RUN command
+Example: RUN npm install -g serve
+
+# Copy files into the container:
+
+Usage: COPY <local files/directories> <container files/directories>
+Example: COPY ./display ./display
+
+# Inform that a port should be exposed
+
+Usage: EXPOSE <port>
+Example: EXPOSE 80
+
+# Specify a default command for the container:
+
+Usage (shell format): CMD <default command>
+Example: CMD serve ./display
+
+Usage (exec format, recommended): CMD [“default command”, “arguments”]
+Example: CMD [“node”, “server.js”]
+
+# Build a Docker image from Dockerfile:
+
+Usage: docker build <path>
+Example (also tags and names the build): docker build . -t Node/WebApp:1.0.0
+(-t is used for tagging a Docker Image)
+
+# Create Docker Container with a name and use existing Node/WebApp:1.0.0 docker image
+
+Usage: docker create -it --name=<name> <image>
+Example: docker create -it --name=NodeWebApp Node/WebApp:1.0.0
+
+# List all running containers:
+
+Example: docker container ls
+
+
+

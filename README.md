@@ -10,8 +10,7 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 
 ## Install Docker Community Edition and Docker Compose
 
-sudo apt install docker-ce -y
-sudo apt install docker-compose -y
+sudo apt install docker-ce -y && sudo apt install docker-compose -y
 
 ## Create a Docker Group
 
@@ -25,10 +24,10 @@ sudo usermod -aG docker $USER && newgrp docker
 
 sudo reboot
 
+# Docker Commands Documentation 
 
-# Docker Documentation 
-
-1. []
+1. [Docker Containers and Images]()
+2. []()
 
 
 

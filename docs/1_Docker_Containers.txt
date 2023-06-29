@@ -1,0 +1,47 @@
+## Docker Container commands
+
+# Create an interactive terminal container with a name, an image, and a default command:
+
+Usage: docker create -it --name=<name> <image> <command>
+Example: docker create -it --name=foo ubuntu bash
+
+# List all running containers (list all containers, running or not):
+
+Usage: docker container ls -a
+Example: : docker container ls -a
+
+# Start a docker container:
+
+Usage: docker start <container name or id>
+Example: docker start foo
+
+# Attach to a docker container:
+
+Usage: docker attach <container name or id>
+Example: docker attach foo
+
+# Remove a container:
+
+Usage: docker rm <container name or id>
+Example: docker rm foo
+Example Force remove: docker rm foo -f
+
+# Run a new container:
+
+Usage: docker run <image> <command>
+Example with options: docker run --name=bar -it ubuntu bash
+
+# Remove all containers:
+
+docker container ls -aq | xargs docker container rm
+Docker Images
+
+# Remove all images:
+
+docker image ls -aq | xargs docker rmi -f
+
+# Search for a docker image:
+
+Usage: docker search <image>
+Example: docker search ubuntu
+
