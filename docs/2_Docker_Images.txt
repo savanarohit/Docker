@@ -81,5 +81,18 @@ Example: docker create -it --name=NodeWebApp Node/WebApp:1.0.0
 Example: docker container ls
 Example: docker ps 
 
+# Checking Docker Image history
 
+Usage: docker image history <container id>
+Example: docker image history cfbsa
+
+# Inspecting a Docker Image
+
+Usage: docker image inspect <container id>
+Example:  docker image inspect cfbsa
+
+# Deleting a Docker Image
+
+Usage: docker image remove <container id>
+Example:  docker image remove cfbsa
 
