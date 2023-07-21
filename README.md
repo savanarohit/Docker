@@ -68,27 +68,27 @@ Dokcer ps -a
 
 Dokcer kill <hash>                          
 
-#### Remove the specified container from this machine
+#### Remove the specified container from this Machine
 
 Dokcer rm <hash>                            
 
-#### Remove force specified container from this machine
+#### Remove force specified container from this Machine
 
 Dokcer rm -f <hash>                         
 
-#### Remove all containers from this machine
+#### Remove all containers from this Machine
 
 Dokcer rm $(Dokcer ps -a -q)                
 
-#### Show all images on this machine
+#### Show all images on this Machine
 
 Dokcer images -a            
 
-#### Remove the specified image from this machine
+#### Remove the specified image from this Machine
 
 Dokcer rmi <imagename>
 
-#### Remove all images from this machine
+#### Remove all images from this Machine
 
 Dokcer rmi $(Dokcer images -q)              
 
@@ -200,85 +200,85 @@ Dokcer service scale <service_name>=<replica>
 
 Dokcer service update <options> <service_name>  
 
-### Dokcer STACK 
+### Dokcer Stack 
 
 #### List all running applications on this Dokcer host
 
-Dokcer stack ls                               
+Dokcer Stack ls                               
 
 #### Run the specified Compose file
 
-Dokcer stack deploy -c <Composefile> <appname>
+Dokcer Stack deploy -c <Composefile> <appname>
 
 #### List the services associated with an app
 
-Dokcer stack services <appname>               
+Dokcer Stack services <appname>               
 
 #### List the running containers associated with an app
 
-Dokcer stack ps <appname>                     
+Dokcer Stack ps <appname>                     
 
 #### Tear down an application
 
-Dokcer stack rm <appname>                     
+Dokcer Stack rm <appname>                     
 
-### Dokcer MACHINE
+### Dokcer Machine
 
 #### Create a VM (Mac, Win7, Linux)
 
-Dokcer-machine create --driver virtualbox myvm1                          
+Dokcer-Machine create --driver virtualbox myvm1                          
 
 #### Win10
 
-Dokcer-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1 
+Dokcer-Machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1 
 
 #### View basic information about your node
 
-Dokcer-machine env myvm1                                                 
+Dokcer-Machine env myvm1                                                 
 
 #### List the nodes in your swarm
 
-Dokcer-machine ssh myvm1 "Dokcer node ls"                                
+Dokcer-Machine ssh myvm1 "Dokcer node ls"                                
 
 #### Inspect a node
 
-Dokcer-machine ssh myvm1 "Dokcer node inspect <node ID>"                 
+Dokcer-Machine ssh myvm1 "Dokcer node inspect <node ID>"                 
 
 #### View join token
 
-Dokcer-machine ssh myvm1 "Dokcer swarm join-token -q worker"             
+Dokcer-Machine ssh myvm1 "Dokcer swarm join-token -q worker"             
 
 #### Open an SSH session with the VM; type "exit" to end
 
-Dokcer-machine ssh myvm1                                                 
+Dokcer-Machine ssh myvm1                                                 
 
 #### Make the worker leave the swarm
 
-Dokcer-machine ssh myvm2 "Dokcer swarm leave"                            
+Dokcer-Machine ssh myvm2 "Dokcer swarm leave"                            
 
 #### Make master leave, kill swarm
 
-Dokcer-machine ssh myvm1 "Dokcer swarm leave -f"                         
+Dokcer-Machine ssh myvm1 "Dokcer swarm leave -f"                         
 
 #### Start a VM that is currently not running
 
-Dokcer-machine start myvm1                                               
+Dokcer-Machine start myvm1                                               
 
 #### Stop all running VMs
 
-Dokcer-machine stop $(Dokcer-machine ls -q)                              
+Dokcer-Machine stop $(Dokcer-Machine ls -q)                              
 
 #### Delete all VMs and their disk images
 
-Dokcer-machine rm $(Dokcer-machine ls -q)                                
+Dokcer-Machine rm $(Dokcer-Machine ls -q)                                
 
 #### Copy file to node's home dir
 
-Dokcer-machine scp Dokcer-Compose.yml myvm1:~                            
+Dokcer-Machine scp Dokcer-Compose.yml myvm1:~                            
 
 #### Deploy an app
 
-Dokcer-machine ssh myvm1 "Dokcer stack deploy -c <file> <app>"           
+Dokcer-Machine ssh myvm1 "Dokcer Stack deploy -c <file> <app>"           
 
 
 
