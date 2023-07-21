@@ -34,9 +34,9 @@ sudo reboot
 6. [Docker Swarm](https://github.com/savanarohit/Docker/blob/main/docs/6_Docker_Swarm.txt)
 7. [Docker Hub](https://github.com/savanarohit/Docker/blob/main/docs/7_Docker_Hub.txt)
 
-##############################################################################################################
+################
 DOCKER Commands
-##############################################################################################################
+################
 
 ##### Create image using this directory's Dockerfile
 
