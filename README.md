@@ -128,9 +128,8 @@ docker volume prune
 
 docker network prune                        
 
-################
-DOCKER COMPOSE
-################
+
+### DOCKER COMPOSE
 
 #### Create and start containers
 docker-compose up                           
@@ -175,9 +174,7 @@ docker-compose top
 
 docker-compose run -rm -p 2022:22 web bash  
 
-################
-DOCKER SERVICES 
-################
+### DOCKER SERVICES 
 
 #### Create new service
 
@@ -203,9 +200,7 @@ docker service scale <service_name>=<replica>
 
 docker service update <options> <service_name>  
 
-################
-DOCKER STACK 
-################
+### DOCKER STACK 
 
 #### List all running applications on this Docker host
 
@@ -227,9 +222,7 @@ docker stack ps <appname>
 
 docker stack rm <appname>                     
 
-################
-DOCKER MACHINE
-################
+### DOCKER MACHINE
 
 #### Create a VM (Mac, Win7, Linux)
 
