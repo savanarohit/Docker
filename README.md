@@ -34,12 +34,10 @@ sudo reboot
 6. [Docker Swarm](https://github.com/savanarohit/Docker/blob/main/docs/6_Docker_Swarm.txt)
 7. [Docker Hub](https://github.com/savanarohit/Docker/blob/main/docs/7_Docker_Hub.txt)
 
-### Docker Commands
-
 #####################################################################################################################
-# DOCKER
+### DOCKER Commands
 #####################################################################################################################
-docker build -t friendlyname .              # Create image using this directory's Dockerfile
+docker build -t friendlyname .              # Create image using this directory's Dockerfile 
 docker run -p 4000:80 friendlyname          # Run "friendlyname" mapping port 4000 to 80
 docker run -d -p 4000:80 friendlyname       # Same thing, but in detached mode
 docker exec -it [container-id] bash         # Enter a running container
