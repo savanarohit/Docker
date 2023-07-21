@@ -1,26 +1,26 @@
 # Docker & Docker Compose installation on Ubuntu OS
 
-## Update Ubuntu OS
+### Update Ubuntu OS
 
 sudo apt update
 
-## Install Docker dependencies
+### Install Docker dependencies
 
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && sudo apt update
 
-## Install Docker Community Edition and Docker Compose
+### Install Docker Community Edition and Docker Compose
 
 sudo apt install docker-ce -y && sudo apt install docker-compose -y
 
-## Create a Docker Group
+### Create a Docker Group
 
 sudo groupadd docker
 
-## Add current user to the Docker Group
+### Add current user to the Docker Group
 
 sudo usermod -aG docker $USER && newgrp docker
 
-## Reboot the system
+### Reboot the system
 
 sudo reboot
 
@@ -34,11 +34,11 @@ sudo reboot
 6. [Docker Swarm](https://github.com/savanarohit/Docker/blob/main/docs/6_Docker_Swarm.txt)
 7. [Docker Hub](https://github.com/savanarohit/Docker/blob/main/docs/7_Docker_Hub.txt)
 
-## Docker Commands
+### Docker Commands
 
-##############################################################################
+#####################################################################################################################
 # DOCKER
-##############################################################################
+#####################################################################################################################
 docker build -t friendlyname .              # Create image using this directory's Dockerfile
 docker run -p 4000:80 friendlyname          # Run "friendlyname" mapping port 4000 to 80
 docker run -d -p 4000:80 friendlyname       # Same thing, but in detached mode
@@ -63,9 +63,9 @@ docker system prune -a                      # Remove all unused containers, netw
 docker volume prune                         # Remove all unused local volumes
 docker network prune                        # Remove all unused networks
 
-##############################################################################
+#####################################################################################################################
 # DOCKER COMPOSE
-##############################################################################
+#####################################################################################################################
 docker-compose up                               # Create and start containers
 docker-compose up -d                            # Create and start containers in detached mode
 docker-compose down                             # Stop and remove containers, networks, images, and volumes
@@ -78,9 +78,9 @@ docker-compose scale <service_name>=<replica>   # Scale special service(s)
 docker-compose top                              # Display the running processes
 docker-compose run -rm -p 2022:22 web bash      # Start web service and runs bash as its command, remove the old container.
 
-##############################################################################
+#####################################################################################################################
 # DOCKER SERVICES 
-##############################################################################
+#####################################################################################################################
 docker service create <options> <image> <command>   # Create new service
 docker service inspect --pretty <service_name>      # Display detailed information Service(s)
 docker service ls                                   # List Services
@@ -88,18 +88,18 @@ docker service ps                                   # List the tasks of Services
 docker service scale <service_name>=<replica>       # Scale special service(s)
 docker service update <options> <service_name>      # Update Service options
 
-##############################################################################
+#####################################################################################################################
 # DOCKER STACK 
-##############################################################################
+#####################################################################################################################
 docker stack ls                                 # List all running applications on this Docker host
 docker stack deploy -c <composefile> <appname>  # Run the specified Compose file
 docker stack services <appname>                 # List the services associated with an app
 docker stack ps <appname>                       # List the running containers associated with an app
 docker stack rm <appname>                       # Tear down an application
 
-##############################################################################
+#####################################################################################################################
 # DOCKER MACHINE
-##############################################################################
+#####################################################################################################################
 docker-machine create --driver virtualbox myvm1                           # Create a VM (Mac, Win7, Linux)
 docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1  # Win10
 docker-machine env myvm1                                                  # View basic information about your node
