@@ -35,7 +35,7 @@ sudo reboot
 7. [Docker Hub](https://github.com/savanarohit/Docker/blob/main/docs/7_Docker_Hub.txt)
 
 ###################################################################################
-### DOCKER Commands
+DOCKER Commands
 ###################################################################################
 
 ### Create image using this directory's Dockerfile
