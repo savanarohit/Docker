@@ -38,7 +38,7 @@ sudo reboot
 DOCKER Commands
 ###################################################################################
 
-### Create image using this directory's Dockerfile
+Create image using this directory's Dockerfile
 
 docker build -t friendlyname .              
 
