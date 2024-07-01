@@ -24,16 +24,6 @@ sudo usermod -aG Docker $USER && newgrp Docker
 
 sudo reboot
 
-#### Docker Commands Documentation 
-
-1. [Docker Containers](https://github.com/savanarohit/Docker/blob/main/docs/1_Docker_Containers.txt)
-2. [Docker Images](https://github.com/savanarohit/Docker/blob/main/docs/2_Docker_Images.txt)
-3. [Docker Volume](https://github.com/savanarohit/Docker/blob/main/docs/3_Docker_Volume.txt)
-4. [Docker Networking](https://github.com/savanarohit/Docker/blob/main/docs/4_Docker_Networking.txt)
-5. [Docker Compose](https://github.com/savanarohit/Docker/blob/main/docs/5_Docker_Compose.txt)
-6. [Docker Swarm](https://github.com/savanarohit/Docker/blob/main/docs/6_Docker_Swarm.txt)
-7. [Docker Hub](https://github.com/savanarohit/Docker/blob/main/docs/7_Docker_Hub.txt)
-
 ### Docker Commands
 
 ##### Create an image using this directory's Dockerfile
