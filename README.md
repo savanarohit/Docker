@@ -1,284 +1,284 @@
-#### Dokcer & Dokcer Compose installation on Ubuntu OS
+#### Docker & Docker Compose installation on Ubuntu OS
 
 #### Update Ubuntu OS
 
 sudo apt update
 
-#### Install Dokcer dependencies
+#### Install Docker dependencies
 
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && sudo apt update
 
-#### Install Dokcer Community Edition and Dokcer Compose
+#### Install Docker Community Edition and Docker Compose
 
-sudo apt install Dokcer-ce -y && sudo apt install Dokcer-Compose -y
+sudo apt install Docker-ce -y && sudo apt install Docker-Compose -y
 
-#### Create a Dokcer Group
+#### Create a Docker Group
 
-sudo groupadd Dokcer
+sudo groupadd Docker
 
-#### Add current user to the Dokcer Group
+#### Add current user to the Docker Group
 
-sudo usermod -aG Dokcer $USER && newgrp Dokcer
+sudo usermod -aG Docker $USER && newgrp Docker
 
 #### Reboot the system
 
 sudo reboot
 
-#### Dokcer Commands Documentation 
+#### Docker Commands Documentation 
 
-1. [Dokcer Containers](https://github.com/savanarohit/Dokcer/blob/main/docs/1_Dokcer_Containers.txt)
-2. [Dokcer Images](https://github.com/savanarohit/Dokcer/blob/main/docs/2_Dokcer_Images.txt)
-3. [Dokcer Volume](https://github.com/savanarohit/Dokcer/blob/main/docs/3_Dokcer_Volume.txt)
-4. [Dokcer Networking](https://github.com/savanarohit/Dokcer/blob/main/docs/4_Dokcer_Networking.txt)
-5. [Dokcer Compose](https://github.com/savanarohit/Dokcer/blob/main/docs/5_Dokcer_Compose.txt)
-6. [Dokcer Swarm](https://github.com/savanarohit/Dokcer/blob/main/docs/6_Dokcer_Swarm.txt)
-7. [Dokcer Hub](https://github.com/savanarohit/Dokcer/blob/main/docs/7_Dokcer_Hub.txt)
+1. [Docker Containers](https://github.com/savanarohit/Docker/blob/main/docs/1_Docker_Containers.txt)
+2. [Docker Images](https://github.com/savanarohit/Docker/blob/main/docs/2_Docker_Images.txt)
+3. [Docker Volume](https://github.com/savanarohit/Docker/blob/main/docs/3_Docker_Volume.txt)
+4. [Docker Networking](https://github.com/savanarohit/Docker/blob/main/docs/4_Docker_Networking.txt)
+5. [Docker Compose](https://github.com/savanarohit/Docker/blob/main/docs/5_Docker_Compose.txt)
+6. [Docker Swarm](https://github.com/savanarohit/Docker/blob/main/docs/6_Docker_Swarm.txt)
+7. [Docker Hub](https://github.com/savanarohit/Docker/blob/main/docs/7_Docker_Hub.txt)
 
-### Dokcer Commands
+### Docker Commands
 
-##### Create image using this directory's Dokcerfile
+##### Create an image using this directory's Dockerfile
 
-Dokcer build -t friendlyname .              
+Docker build -t friendlyname.              
 
 #### Run "friendlyname" mapping port 4000 to 80
 
-Dokcer run -p 4000:80 friendlyname          
+Docker run -p 4000:80 friendlyname          
 
 #### Same thing, but in detached mode
 
-Dokcer run -d -p 4000:80 friendlyname       
+Docker run -d -p 4000:80 friendlyname       
 
 #### Enter a running container
 
-Dokcer exec -it [container-id] bash         
+Docker exec -it [container-id] bash         
 
 #### See a list of all running containers
 
-Dokcer ps                                   
+Docker ps                                   
 
 #### Gracefully stop the specified container
 
-Dokcer stop <hash>                          
+Docker stop <hash>                          
 
 #### See a list of all containers, even the ones not running
 
-Dokcer ps -a                                
+Docker ps -a                                
 
 #### Force shutdown of the specified container
 
-Dokcer kill <hash>                          
+Docker kill <hash>                          
 
 #### Remove the specified container from this Machine
 
-Dokcer rm <hash>                            
+Docker rm <hash>                            
 
-#### Remove force specified container from this Machine
+#### Remove force-specified container from this Machine
 
-Dokcer rm -f <hash>                         
+Docker rm -f <hash>                         
 
 #### Remove all containers from this Machine
 
-Dokcer rm $(Dokcer ps -a -q)                
+Docker rm $(Docker ps -a -q)                
 
 #### Show all images on this Machine
 
-Dokcer images -a            
+Docker images -a            
 
 #### Remove the specified image from this Machine
 
-Dokcer rmi <imagename>
+Docker rmi <imagename>
 
 #### Remove all images from this Machine
 
-Dokcer rmi $(Dokcer images -q)              
+Docker rmi $(Docker images -q)              
 
 #### Live tail a container's logs
 
-Dokcer logs <container-id> -f               
+Docker logs <container-id> -f               
 
-#### Login to this CLI session using your Dokcer credentials
+#### Login to this CLI session using your Docker credentials
 
-Dokcer login                                
+Docker login                                
 
 #### Tag <image> for upload to registry
 
-Dokcer tag <image> username/repository:tag  
+Docker tag <image> username/repository:tag  
 
 #### Upload tagged image to a registry
 
-Dokcer push username/repository:tag         
+Docker push username/repository:tag         
 
 #### Run image from a registry
 
-Dokcer run username/repository:tag          
+Docker run username/repository:tag          
 
-#### Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes. (Dokcer 17.06.1-ce and superior)
+#### Remove all unused containers, networks, images (dangling and unreferenced), and volumes optionally. (Docker 17.06.1-ce and superior)
 
-Dokcer system prune                         
+Docker system prune                         
 
-#### Remove all unused containers, networks, and images not just dangling ones (Dokcer 17.06.1-ce and superior)
+#### Remove all unused containers, networks, and images not just dangling ones (Docker 17.06.1-ce and superior)
 
-Dokcer system prune -a                      
+Docker system prune -a                      
 
 #### Remove all unused local volumes
 
-Dokcer volume prune 
+Docker volume prune 
 
 #### Remove all unused networks
 
-Dokcer network prune                        
+Docker network prune                        
 
 
-### Dokcer Compose
+### Docker Compose
 
 #### Create and start containers
-Dokcer-Compose up                           
+Docker-Compose up                           
 
 #### Create and start containers in detached mode
 
-Dokcer-Compose up -d                        
+Docker-Compose up -d                        
 
 #### Stop and remove containers, networks, images, and volumes
 
-Dokcer-Compose down                         
+Docker-Compose down                         
 
 #### View output from containers
 
-Dokcer-Compose logs                         
+Docker-Compose logs                         
 
 #### Restart all service
 
-Dokcer-Compose restart                      
+Docker-Compose restart                      
 
 #### Pull all image service 
 
-Dokcer-Compose pull                         
+Docker-Compose pull                         
 
 #### Build all image service
 
-Dokcer-Compose build                        
+Docker-Compose build                        
 
 #### Validate and view the Compose file
 
-Dokcer-Compose config                       
+Docker-Compose config                       
 
 #### Scale special service(s)
 
-Dokcer-Compose scale <service_name>=<replica>
+Docker-Compose scale <service_name>=<replica>
 
 #### Display the running processes
 
-Dokcer-Compose top                          
+Docker-Compose top                          
 
 #### Start web service and runs bash as its command, remove the old container.
 
-Dokcer-Compose run -rm -p 2022:22 web bash  
+Docker-Compose run -rm -p 2022:22 web bash  
 
-### Dokcer Services
+### Docker Services
 
 #### Create new service
 
-Dokcer service create <options> <image> <command>
+Docker service create <options> <image> <command>
 
 #### Display detailed information Service(s)
 
-Dokcer service inspect --pretty <service_name>   
+Docker service inspect --pretty <service_name>   
 
 #### List Services
 
-Dokcer service ls                                
+Docker service ls                                
 
 #### List the tasks of Services
 
-Dokcer service ps                                
+Docker service ps                                
 
 #### Scale special service(s)
 
-Dokcer service scale <service_name>=<replica>    
+Docker service scale <service_name>=<replica>    
 
 #### Update Service options
 
-Dokcer service update <options> <service_name>  
+Docker service update <options> <service_name>  
 
-### Dokcer Stack 
+### Docker Stack 
 
-#### List all running applications on this Dokcer host
+#### List all running applications on this Docker host
 
-Dokcer Stack ls                               
+Docker Stack ls                               
 
 #### Run the specified Compose file
 
-Dokcer Stack deploy -c <Composefile> <appname>
+Docker Stack deploy -c <Composefile> <appname>
 
 #### List the services associated with an app
 
-Dokcer Stack services <appname>               
+Docker Stack services <appname>               
 
 #### List the running containers associated with an app
 
-Dokcer Stack ps <appname>                     
+Docker Stack ps <appname>                     
 
 #### Tear down an application
 
-Dokcer Stack rm <appname>                     
+Docker Stack rm <appname>                     
 
-### Dokcer Machine
+### Docker Machine
 
 #### Create a VM (Mac, Win7, Linux)
 
-Dokcer-Machine create --driver virtualbox myvm1                          
+Docker-Machine create --driver virtualbox myvm1                          
 
 #### Win10
 
-Dokcer-Machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1 
+Docker-Machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1 
 
 #### View basic information about your node
 
-Dokcer-Machine env myvm1                                                 
+Docker-Machine env myvm1                                                 
 
 #### List the nodes in your swarm
 
-Dokcer-Machine ssh myvm1 "Dokcer node ls"                                
+Docker-Machine ssh myvm1 "Docker node ls"                                
 
 #### Inspect a node
 
-Dokcer-Machine ssh myvm1 "Dokcer node inspect <node ID>"                 
+Docker-Machine ssh myvm1 "Docker node inspect <node ID>"                 
 
 #### View join token
 
-Dokcer-Machine ssh myvm1 "Dokcer swarm join-token -q worker"             
+Docker-Machine ssh myvm1 "Docker swarm join-token -q worker"             
 
 #### Open an SSH session with the VM; type "exit" to end
 
-Dokcer-Machine ssh myvm1                                                 
+Docker-Machine ssh myvm1                                                 
 
 #### Make the worker leave the swarm
 
-Dokcer-Machine ssh myvm2 "Dokcer swarm leave"                            
+Docker-Machine ssh myvm2 "Docker swarm leave"                            
 
-#### Make master leave, kill swarm
+#### Make master leave, kill the swarm
 
-Dokcer-Machine ssh myvm1 "Dokcer swarm leave -f"                         
+Docker-Machine ssh myvm1 "Docker swarm leave -f"                         
 
 #### Start a VM that is currently not running
 
-Dokcer-Machine start myvm1                                               
+Docker-Machine start myvm1                                               
 
 #### Stop all running VMs
 
-Dokcer-Machine stop $(Dokcer-Machine ls -q)                              
+Docker-Machine stop $(Docker-Machine ls -q)                              
 
 #### Delete all VMs and their disk images
 
-Dokcer-Machine rm $(Dokcer-Machine ls -q)                                
+Docker-Machine rm $(Docker-Machine ls -q)                                
 
 #### Copy file to node's home dir
 
-Dokcer-Machine scp Dokcer-Compose.yml myvm1:~                            
+Docker-Machine scp Docker-Compose.yml myvm1:~                            
 
 #### Deploy an app
 
-Dokcer-Machine ssh myvm1 "Dokcer Stack deploy -c <file> <app>"           
+Docker-Machine ssh myvm1 "Docker Stack deploy -c <file> <app>"           
 
 
 
