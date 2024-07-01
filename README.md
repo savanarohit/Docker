@@ -1,26 +1,26 @@
 #### Docker & Docker Compose installation on Ubuntu OS
 
-#### Update Ubuntu OS
+1) Update Ubuntu OS
 
 sudo apt update
 
-#### Install Docker dependencies
+2) Install Docker dependencies
 
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && sudo apt update
 
-#### Install Docker Community Edition and Docker Compose
+3) Install Docker Community Edition and Docker Compose
 
 sudo apt install Docker-ce -y && sudo apt install Docker-Compose -y
 
-#### Create a Docker Group
+4) Create a Docker Group
 
 sudo groupadd Docker
 
-#### Add current user to the Docker Group
+5) Add the current user to the Docker Group
 
 sudo usermod -aG Docker $USER && newgrp Docker
 
-#### Reboot the system
+6) Reboot the system
 
 sudo reboot
 
